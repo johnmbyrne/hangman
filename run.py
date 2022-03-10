@@ -4,7 +4,8 @@ def hangman():
     """
     Classic Hangman game function
     """
-    selection = ["football","tennis","rugby","basketball","snooker","hurling","squash"]  # The word list the game will choose from
+    # The word list the game will choose from
+    selection = ["football", "tennis", "rugby", "basketball", "snooker", "hurling", "squash"]
     word = random.choice(selection)  # Randomly selecting from the word list for the game
     letters_choice = 'qwertyuiopasdfghjklzxcvbnm'  # The valid inputs the user can select from
     guesses = 12  # The maximum number of times the game will loop if the word is not guessed
@@ -20,7 +21,7 @@ def hangman():
                 answer = answer + letter
             else:
                 answer = answer + '_'+''
-        
+                
         # If the word is correctly guessed
         if answer == word:
             print(answer)
@@ -29,20 +30,21 @@ def hangman():
         
         print("Guess the word:", answer)
         guess = input()
-        guess = guess.lower()  # To make sure any letter entered is converted to lower case before comparing to the selected word
+        guess = guess.lower()
+        # To make sure any letter entered is converted to lower case before comparing to the selected word
 
         # To make sure only valid letters are picked
         if guess in letters_choice:
             guess_made = guess_made + guess
         elif len(guess) > 1:
-            print(name , "enter a single letter from a-z:")
+            print(name, "enter a single letter from a-z:")
             guess = input()
             guess = guess.lower()
         elif guess not in letters_choice:
-            print(name , "only pick letters from a-z please:")
+            print(name, "only pick letters from a-z please:")
             guess = input()
             guess = guess.lower()
-        
+
         # What happens when wrong guess is made
         if guess not in word:
             guesses = guesses - 1
