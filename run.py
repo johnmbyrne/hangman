@@ -28,7 +28,7 @@ def hangman():
             print("Congratulations, you're a Winner!")
             break
         
-        print("Guess the word:", answer)
+        print("Guess the word (one letter at a time):", answer)
         guess = input()
         guess = guess.lower()
         # To make sure any letter entered is converted to lower case before comparing to the selected word
@@ -55,6 +55,7 @@ def hangman():
                 print("I I I X")
             if guesses == 10:
                 print("10 incorrect guesses left")
+                print("(Hint: it's a sport)")
                 print("I I I I")
                 print("I I I I")
                 print("I I X X")
