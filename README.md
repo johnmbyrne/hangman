@@ -56,6 +56,12 @@ the game will end when either the player correctly guesses the word completely, 
 - Add a larger selection of words.
 - Add different themed lists with hints depending on which theme was randomly selected.
 
+## Data Model
+
+As the game is simple, I used a single function containing a list as the basic data model.  Using classes was not deemed necessary as there are no complex data types that could not be modelled using Python's built-in data structures.
+
+The function contains various methods to help play the game and communicate with the player, such as the print() method to communicate how tghe player is doing and what to do, and the input() method to take input from the player.
+
 ## Testing 
 
 I have manually tested this project by doing the following:
