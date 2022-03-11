@@ -1,14 +1,18 @@
 import random
 
+
 def hangman():
     """
     Classic Hangman game function
     """
     # The word list the game will choose from
-    selection = ["football", "tennis", "rugby", "basketball", "snooker", "hurling", "squash"]
-    word = random.choice(selection)  # Randomly selecting from the word list for the game
-    letters_choice = 'qwertyuiopasdfghjklzxcvbnm'  # The valid inputs the user can select from
-    guesses = 12  # The maximum number of times the game will loop if the word is not guessed
+    selection = (["football", "tennis", "rugby", "basketball",
+                  "snooker", "hurling", "squash"])
+    # Randomly selecting from the word list
+    word = random.choice(selection)
+    # The valid inputs the user can select from
+    letters_choice = 'qwertyuiopasdfghjklzxcvbnm'
+    guesses = 12
     guess_made = ''
 
     # Main gameplay section
@@ -21,18 +25,18 @@ def hangman():
                 answer = answer + letter
             else:
                 answer = answer + '_'+''
-                
         # If the word is correctly guessed
         if answer == word:
             print(answer)
             print("Congratulations, you're a Winner!")
             break
-        
         print("Guess the word (one letter at a time):", answer)
         guess = input()
         guess = guess.lower()
-        # To make sure any letter entered is converted to lower case before comparing to the selected word
-
+        """
+        To make sure any letter entered is converted
+        to lower case before comparing to the selected word
+        """
         # To make sure only valid letters are picked
         if guess in letters_choice:
             guess_made = guess_made + guess

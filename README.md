@@ -23,26 +23,38 @@ the game will end when either the player correctly guesses the word completely, 
 
 - __Start Screen__
 
-  - To start, the player enters their name, and a word is randomly selected
+  - To start, the player presses the Run Program button, and then enters their name.  A word is randomly selected from a list in the code, and the basic instructions are given.
 
-![Quiz Box Area](assets/images/quiz_box.png)
+![Initial Screen](images/start_screen.png)
 
-  - If no answer is selected and the Next Question button is pressed the player will get a dialog box asking them to pick an option:
+  - If anything other than a letter from a-z is chossen, a message telling the player to select such a letter is displayed.
 
-  ![Please Pick an Option dialog](assets/images/please_pick.png)
+  ![Not a letter error](images/error.png)
 
-- __Completion Box__
+  - If more than one letter is picked, the player is asked to pick a single letter.
 
-  - On completing the quiz a summary box will appear giving a final score and a comment.  There are three versions, depending on the score range the player achieves.
+  ![More than one letter error](images/error2.png)
 
-![Score 0-4](assets/images/poor.png)
-![Score 5-7](assets/images/average.png)
-![Score 8-10](assets/images/good.png)
+- __Normal gameplay__
+
+  - As the guesses are made, correct ones fill in on the screen, and incorrect ones are counted down.  The number of remaining guesses is given as a number, and represented by an "I", incorrect guesses are represented by an "X".  This was done instead of creating a rudimentary hanging man, as that seemed a little mean.
+
+  - When the player is down to ten incorrect guesses remaining, a hint is given.
+
+![Standard gameplay](images/gameplay.png)
+
+- If 12 incorrect guesses are made, the player loses and gets a message to say they lost, and telling them the correct answer.
+
+![Loss completion screen](images/loss.png)
+
+- If the player guesses all the correct letters before having 12 incorect guesses, they will get the winning screen.
+
+![Win completion screen](images/win.png)
 
 ### Features Left to Implement
 
-- A larger selection of questions can be added to the question bank.
-- The quiz can be split with different quiz themes (e.g. Movies, Sport etc.) on each page drawing from different question banks to be selected by the player.
+- Add a larger selection of words.
+- Add different themed lists with hints depending on which theme was randomly selected.
 
 ## Testing 
 
